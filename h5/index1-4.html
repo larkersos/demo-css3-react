@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这些日子，你还记的吗？ 1- 4 React Props</title>
+
+
+    <link rel="stylesheet" href="../css/timeline.css">
+    <link rel="stylesheet" href="../css/main.css"/>
+    <!--[if IE]>
+    <![endif]-->
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+<h3 id="circle18" class="section-heading" id="titleDiv">{props.title)}</h3>
+<div class="bs-callout bs-callout-warning hidden">
+    <p>Note: This will not work in IE9, since IE9 doesn't support 3d rotate.</p>
+</div>
+<div class="bs-example">
+    <!-- Bottom to top -->
+    <div class="row">
+        <div id="itemDiv"></div>
+    </div>
+    <!-- end Bottom to top -->
+</div>
+
+
+</body>
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<!-- 生产环境中不建议使用 -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<script src="../js/index/app.js"></script>
+
+<script type="text/babel">
+    class SpanDiv extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {date: new Date()}
+        };
+        render() {
+            return <span>{this.state.title}{this.state.date.toLocaleTimeString()}</span>;
+        }
+    }
+
+    class ImageDiv extends React.Component {
+        return <div class="image">
+                <div class="ih-item circle effect18 bottom_to_top ">
+                <a href="http://baidu.com">
+                <div class="img"><img src="../images/index/1.jpg" alt="img"/>
+                </div>
+                <div class="info">
+                <div class="info-back">
+                <h3>还记的前夜的场景吗？</h3>
+        <p>React 组件</p>
+        </div>
+        </div>
+        </a>
+        </div>
+        <SpanDiv title="http://www.runoob.com" />
+                </div>;
+    }
+
+    function ItemDivMessage(props) {
+        return <div class="item">
+                <ImageDiv class="菜鸟教程" />
+                <div class="details">
+                <div>
+                <h1>Phasellus pharetra</h1>
+        <p>Proin condimentum tempus ultrices. Suspendisse vestibulum suscipit erat, ac efficitur lorem. Nullam non ex vel turpis imperdiet maximus sit amet nec odio. Donec mauris nisl, vestibulum id efficitur at, convallis id dui. Sed enim nisl, ultrices vitae sodales eu, vestibulum a mi. Morbi consectetur pulvinar sagittis. Phasellus pharetra diam id leo gravida pharetra. In rutrum est gravida, maximus mi ac, mattis metus. Ut at tempus sem. Vivamus condimentum erat eget aliquet dignissim. </p>
+        </div>
+        </div>
+        </div>;
+    }
+
+    ReactDOM.render(
+    <ItemDivMessage />,
+            document.getElementById('itemDiv')
+    );
+
+
+
+
+    class TitleDiv extends React.Component {
+        constructor() {
+            super();
+        };
+        render() {
+            return {this.props.title}<;
+        }
+    }
+    
+    ReactDOM.render(
+        <TitleDiv title="1- 4 React Props" />,
+                document.getElementById('titleDiv')
+        );
+</script>
+</html>
