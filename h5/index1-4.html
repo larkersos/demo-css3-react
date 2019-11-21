@@ -14,7 +14,7 @@
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
-<h3 id="circle18" class="section-heading" id="titleDiv">{props.title)}</h3>
+<div id="titleDiv"></div>
 <div class="bs-callout bs-callout-warning hidden">
     <p>Note: This will not work in IE9, since IE9 doesn't support 3d rotate.</p>
 </div>
@@ -38,35 +38,35 @@
     class SpanDiv extends React.Component {
         constructor(props) {
             super(props);
-            this.state = {date: new Date()}
+            this.state = {date: new Date(),title:"React State(状态)"}
         };
         render() {
-            return <span>{this.state.title}{this.state.date.toLocaleTimeString()}</span>;
+            return <span>{this.state.date.toLocaleTimeString()}</span>;
         }
     }
 
-    class ImageDiv extends React.Component {
-        return <div class="image">
-                <div class="ih-item circle effect18 bottom_to_top ">
+    function ImageDiv(props) {
+        return <div className="image">
+                <div className="ih-item circle effect18 bottom_to_top ">
                 <a href="http://baidu.com">
-                <div class="img"><img src="../images/index/1.jpg" alt="img"/>
+                <div className="img"><img src="../images/index/1.jpg" alt="img"/>
                 </div>
-                <div class="info">
-                <div class="info-back">
+                <div className="info">
+                <div className="info-back">
                 <h3>还记的前夜的场景吗？</h3>
         <p>React 组件</p>
         </div>
         </div>
         </a>
         </div>
-        <SpanDiv title="http://www.runoob.com" />
+        <SpanDiv url="http://www.runoob.com" />
                 </div>;
     }
 
     function ItemDivMessage(props) {
-        return <div class="item">
-                <ImageDiv class="菜鸟教程" />
-                <div class="details">
+        return <div className="item">
+                <ImageDiv className="" />
+                <div className="details">
                 <div>
                 <h1>Phasellus pharetra</h1>
         <p>Proin condimentum tempus ultrices. Suspendisse vestibulum suscipit erat, ac efficitur lorem. Nullam non ex vel turpis imperdiet maximus sit amet nec odio. Donec mauris nisl, vestibulum id efficitur at, convallis id dui. Sed enim nisl, ultrices vitae sodales eu, vestibulum a mi. Morbi consectetur pulvinar sagittis. Phasellus pharetra diam id leo gravida pharetra. In rutrum est gravida, maximus mi ac, mattis metus. Ut at tempus sem. Vivamus condimentum erat eget aliquet dignissim. </p>
@@ -81,20 +81,22 @@
     );
 
 
-
+    function TitleDiv2(props) {
+        return (<h3 id="circle18" className="section-heading">{props.titleReactName}</h3>);
+    }
 
     class TitleDiv extends React.Component {
-        constructor() {
-            super();
+        constructor(props) {
+            super(props);
         };
         render() {
-            return {this.props.title}<;
+            return <h3 id="circle18" className="section-heading">{this.props.titleReactName}</h3>;
         }
     }
-    
+
     ReactDOM.render(
-        <TitleDiv title="1- 4 React Props" />,
-                document.getElementById('titleDiv')
-        );
+    <TitleDiv titleReactName="react class 2019"/>,
+            document.getElementById('titleDiv')
+    );
 </script>
 </html>

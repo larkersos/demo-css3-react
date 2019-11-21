@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这些日子，你还记的吗？ 1- 5 React json</title>
+
+
+    <link rel="stylesheet" href="../css/timeline.css">
+    <link rel="stylesheet" href="../css/main.css"/>
+    <!--[if IE]>
+    <![endif]-->
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+<div id="titleDiv"></div>
+<div class="bs-callout bs-callout-warning hidden">
+    <p>Note: This will not work in IE9, since IE9 doesn't support 3d rotate.</p>
+</div>
+<div class="bs-example">
+    <!-- Bottom to top -->
+    <div class="row">
+        <div id="itemDiv"></div>
+    </div>
+    <!-- end Bottom to top -->
+</div>
+
+
+</body>
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<!-- 生产环境中不建议使用 -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<script type="text/babel">
+    class TitleDiv extends React.Component {
+        constructor(props) {
+            super(props);
+        };
+        render() {
+            return <h3 id="circle18" className="section-heading">{this.props.titleReactName}</h3>;
+        }
+    }
+
+    ReactDOM.render(
+    <TitleDiv titleReactName="React 列表 & Keys"/>,
+            document.getElementById('titleDiv')
+    );
+
+    const numbers = [1, 2, 3, 4, 5];
+    const listItems = numbers.map((numbers) =>
+            <li>{numbers}</li>
+    );
+
+    ReactDOM.render(
+    <ul>{listItems}</ul>,
+            document.getElementById('itemDiv')
+    );
+
+
+
+
+    function Blog(props) {
+        const sidebar = (
+                <ul>
+                {props.posts.map((post) =>
+                <li key={post.id}>
+        {post.title}
+    </li>
+    )}
+    </ul>
+    );
+        const content = props.posts.map((post) =>
+                <div key={post.id}>
+    <h3>{post.title}</h3>
+        <p>{post.content}</p>
+        </div>
+    );
+        return (
+                <div>
+                {sidebar}
+                <hr />
+                {content}
+                </div>
+    );
+    }
+
+    const posts = [
+        {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+        {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+    ];
+    ReactDOM.render(
+    <Blog posts={posts} />,
+            document.getElementById('itemDiv')
+    );
+
+
+
+</script>
+</html>
