@@ -2,20 +2,23 @@ var indexList  = [
 {id: 1
 , imgUrl: '../images/index/1.jpg'
 , imgHref: 'detail/detail-swiper.html?id=1'
+, hitTitle: '2019'
 , h3Text: '你还记得今天吗'
 , pText: 'Hello pText'
 , h1Detail: 'Welcome h1Detail!'
 , pDetail: ' Welcome pDetail  Welcome to learning React!'}
 ,        {id: 2
 , imgUrl: '../images/index/2.jpg'
-, imgHref: 'detail/detail.html?id=2'
+  , imgHref: 'detail/detail-swiper.html?id=2'
+  , hitTitle: '2018'
 , h3Text: '你还记得昨天吗'
 , pText: '2Hello pText'
 , h1Detail: '2Welcome h1Detail!'
 , pDetail: ' 2Welcome pDetail  Welcome to learning React!'}
 ,        {id: 3
 , imgUrl: '../images/index/3.jpg'
-, imgHref: 'detail/detail.html?id=3'
+  , imgHref: 'detail/detail-swiper.html?id=3'
+  , hitTitle: '2017'
 , h3Text: '你还记得明天吗'
 , pText: '3Hello pText'
 , h1Detail: '3Welcome h1Detail!'

@@ -47,7 +47,8 @@
   border: 1px solid #232b50;
   border-radius: 0.5em;
   padding: 1.5em;
-  margin: 1em 0.2em;
+  margin: 1em 1.5em 0.2em 0.2em;
+  min-height: 174px;
 }
 .item .details > div h1 {
   color: #5ed3bf;

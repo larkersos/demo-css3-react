@@ -14,14 +14,18 @@
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
-<div id="titleDiv">json-data 时光轴相册 2019</div>
+<div id="titleDiv">
+    <h3 id="circle18" class="section-heading">时光轴相册 2019</h3>
+
+</div>
 <div class="bs-callout bs-callout-warning hidden">
     <p>Note: This will not work in IE9, since IE9 doesn't support 3d rotate.</p>
 </div>
 <div class="bs-example">
     <!-- Bottom to top -->
     <div class="row">
-        <div id="itemDiv">时光轴相册</div>
+        <div id="itemDiv">
+        </div>
     </div>
     <!-- end Bottom to top -->
 </div>
@@ -37,7 +41,7 @@
 
 <script type="text/babel">
     class SpanDiv extends React.Component {
-        constructor(props) {
+        constructor(props){
             super(props);
             this.state = {date: new Date(),title:"1- 6 React key"}
         };
@@ -48,24 +52,24 @@
 
     function ImageDiv(props) {
         return <div className="image" key={props.post.id}>
-    <div className="ih-item circle effect18 bottom_to_top ">
+            <div className="ih-item circle effect18 bottom_to_top ">
                 <a href={props.post.imgHref}>
-    <div className="img"><img src={props.post.imgUrl} alt="img"/>
-                </div>
-                <div className="info">
-                <div className="info-back">
-                <h3>{props.post.h3Text}</h3>
-        <p>{props.post.pText}</p>
-        </div>
-        </div>
-        </a>
-        </div>
-        <SpanDiv  />
+                    <div className="img"><img src={props.post.imgUrl} alt="img"/>
+                    </div>
+                    <div className="info">
+                        <div className="info-back">
+                            <h3>{props.post.h3Text}</h3>
+                            <p>{props.post.pText}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <SpanDiv  />
         </div>;
     }
 
     class ItemDivMessage extends React.Component {
-        constructor(props) {
+        constructor(props){
             super(props);
             this.state = {posts: props.posts};
 
@@ -73,15 +77,15 @@
         render() {
             const content = this.state.posts.map((post) =>
                     <div className="item"  key={post.id}>
-        <ImageDiv post={post} />
-                    <div className="details">
-                    <div>
-                    <h1>{post.h1Detail}</h1>
-            <p>{post.pDetail} </p>
-            </div>
-            </div>
-            </div>
-        );
+                        <ImageDiv post={post} />
+                        <div className="details">
+                            <div>
+                                <h1>{post.h1Detail}</h1>
+                                <p>{post.pDetail} </p>
+                            </div>
+                        </div>
+                    </div>
+            );
             return content;
         }
     }
@@ -89,8 +93,8 @@
     const posts = indexList;
 
     ReactDOM.render(
-    <ItemDivMessage posts={posts}/>,
-            document.getElementById('itemDiv')
+            <ItemDivMessage posts={posts}/>,
+        document.getElementById('itemDiv')
     );
 
 
@@ -108,8 +112,8 @@
     }
 
     ReactDOM.render(
-    <TitleDiv titleReactName="时光轴相册 2019"/>,
-            document.getElementById('titleDiv')
+            <TitleDiv titleReactName="时光轴相册 2019"/>,
+        document.getElementById('titleDiv')
     );
 </script>
 </html>

@@ -6,11 +6,16 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<script src="../data/detailList.json"></script>
-	<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-	<!-- 生产环境中不建议使用 -->
-	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<!--<script src="https://unpkg.com/react@16/umd/react.development.js"></script>-->
+	<!--<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>-->
+	<!--&lt;!&ndash; 生产环境中不建议使用 &ndash;&gt;-->
+	<!--<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>-->
 
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+
+	<link rel="stylesheet" href="../../css/main.css"/>
 	<!--  引入swiper的CDN地址 -->
 	<link rel="stylesheet" href="https://www.9416.cn/demo/swiper/dist/css/swiper.min.css">
 
@@ -19,6 +24,7 @@
 		html, body {
 			position: relative;
 			height: 100%;
+			border-radius: 5px;
 		}
 		body {
 			background: #FFF;
@@ -27,10 +33,11 @@
 			color:#000;
 			margin: 0;
 			padding: 0;
+			border-radius: 10px;
 		}
 		.swiper-container {
 			width: 100%;
-			height: 300px;
+			height: 280px;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -40,7 +47,7 @@
 			text-align: center;
 		}
 		.gallery-top {
-			height: 80%;
+			height: 70%;
 			width: 100%;
 		}
 		.gallery-thumbs {
@@ -79,7 +86,10 @@
 	</style>
 
 </head>
-<body>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div id="titleDiv">
+	<h3 id="circle18" class="section-heading"><a href="../index.html">时光轴相册 2019</a></h3>
+</div>
 	<div class="swiper-container gallery-top">
 		<div class="swiper-wrapper" id="galleryTop">
 		</div>
@@ -89,18 +99,55 @@
 	</div>
 	<div class="swiper-container gallery-thumbs">
 		<div class="swiper-wrapper" id="gallery-thumbs">
-
 		</div>
 	</div>
 
 </body>
 
 <script type="text/babel">
-	const activeimgList = detailList['1'];
-//	alert(activeimgList);
+    function getparm(parm){
+        var url = window.location.href;
+
+        var arr = url.split("?");
+
+        if(arr.length > 1) {
+
+            var arrparm =  arr[1].split("&");
+
+            var a;
+
+            for (var i = 0; i < arrparm.length; i++) {
+
+                a = arrparm[i].split("=");
+
+                if (a != null && a[0] == parm ) {
+
+                    return a[1];
+
+                };
+
+            }
+
+        }else{
+
+            return "";
+
+        }
+
+    }
+
+
+    //console.warn("path===="+getparm("id"));
+    // 获取 id
+    const detailId = getparm("id");
+	//console.warn(detailId);
+
+	const activeimgList = detailList[detailId];
+	//alert(activeimgList);
 	class SwiperGalleryDiv extends React.Component {
 		constructor(props) {
 			super(props);
+			console.warn("this.props.match=="+this.props.match);
 			this.state = {activeimgList:props.activeimgList,galleryLocation:props.galleryLocation}
 		};
 
