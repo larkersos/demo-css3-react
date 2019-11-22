@@ -1,7 +1,7 @@
 var indexList  = [
 {id: 1
 , imgUrl: '../images/index/1.jpg'
-, imgHref: 'detail/detail.html?id=1'
+, imgHref: 'detail/detail-swiper.html?id=1'
 , h3Text: '你还记得今天吗'
 , pText: 'Hello pText'
 , h1Detail: 'Welcome h1Detail!'

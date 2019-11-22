@@ -3,24 +3,38 @@ var detailList  = {
 {id: 1
 , imgUrl: '../../images/detail/1.jpg'
 , imgHref: 'detail/detail.html?id=1'
-, h3Text: 'Hello World'
-, pText: 'Hello pText'
+, h3Text: '第一张图'
+, pText: '这里是第一张图的介绍'
 , h1Detail: 'Welcome h1Detail!'
 , pDetail: ' Welcome pDetail  Welcome to learning React!'}
 ,        {id: 2
 , imgUrl: '../../images/detail/2.jpg'
 , imgHref: 'detail/detail.html?id=2'
-, h3Text: '2Hello World'
-, pText: '2Hello pText'
+, h3Text: '第2张图'
+, pText: '这里是第2张图的介绍这里是第2张图的介绍这里是第2张图的介绍这里是第2张图的介绍这里是第2张图的介绍这里是第2张图的介绍这里是第2张图的介绍这里是第2张图的介绍11111'
 , h1Detail: '2Welcome h1Detail!'
 , pDetail: ' 2Welcome pDetail  Welcome to learning React!'}
 ,        {id: 3
 , imgUrl: '../../images/detail/3.jpg'
 , imgHref: 'detail/detail.html?id=3'
+, h3Text: '第3张图'
+, pText: '3Hello pText'
+, h1Detail: '3Welcome h1Detail!'
+, pDetail: ' 3Welcome pDetail  Welcome to learning React!'}
+,        {id: 4
+, imgUrl: '../../images/detail/4.jpg'
+, imgHref: 'detail/detail.html?id=3'
 , h3Text: '3Hello World'
 , pText: '3Hello pText'
 , h1Detail: '3Welcome h1Detail!'
 , pDetail: ' 3Welcome pDetail  Welcome to learning React!'}
+,        {id: 5
+, imgUrl: '../../images/detail/5.jpg'
+, imgHref: 'detail/detail.html?id=2'
+, h3Text: '2Hello World'
+, pText: '2Hello pText'
+, h1Detail: '2Welcome h1Detail!'
+, pDetail: ' 2Welcome pDetail  Welcome to learning React!'}
 ]
 ,"2":[
 {id: 1

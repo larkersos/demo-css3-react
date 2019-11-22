@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播代码 </title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://www.9416.cn/demo/swiper/dist/css/swiper.min.css">
+
+	<!-- Demo styles -->
+	<style>
+		html, body {
+			position: relative;
+			height: 100%;
+		}
+		body {
+			background: #000;
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			color:#000;
+			margin: 0;
+			padding: 0;
+		}
+		.swiper-container {
+			width: 100%;
+			height: 300px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.swiper-slide {
+			background-size: cover;
+			background-position: center;
+		}
+		.gallery-top {
+			height: 80%;
+			width: 100%;
+		}
+		.gallery-thumbs {
+			height: 20%;
+			box-sizing: border-box;
+			padding: 10px 0;
+		}
+		.gallery-thumbs .swiper-slide {
+			width: 25%;
+			height: 100%;
+			opacity: 0.4;
+		}
+		.gallery-thumbs .swiper-slide-thumb-active {
+			opacity: 1;
+		}
+
+	</style>
+
+</head>
+<body>
+
+<!-- 存放大图的容器-->
+<!-- Swiper -->
+<div class="swiper-container gallery-top">
+	<div class="swiper-wrapper" id="galleryTop">
+
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+
+
+	</div>
+	<!-- Add Arrows -->
+	<div class="swiper-button-next swiper-button-white"></div>
+	<div class="swiper-button-prev swiper-button-white"></div>
+</div>
+<div class="swiper-container gallery-thumbs">
+	<div class="swiper-wrapper" id="gallery-thumbs">
+
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+		<div class="swiper-slide" style="background-image:url(../../images/detail/4.jpg)"></div>
+
+
+	</div>
+</div>
+
+</body>
+
+<!-- Swiper JS -->
+<script src="https://www.9416.cn/demo/swiper/dist/js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+	var galleryThumbs = new Swiper('.gallery-thumbs', {
+		spaceBetween: 10,
+		slidesPerView: 4,
+		loop: true,
+		freeMode: true,
+		loopedSlides: 5, //looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		observer: true
+	});
+
+	var galleryTop = new Swiper('.gallery-top', {
+		spaceBetween: 10,
+		loop: true,
+		loopedSlides: 5, //looped slides should be the same
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		thumbs: {
+			swiper: galleryThumbs,
+		}
+	});
+
+
+</script>
+</html>

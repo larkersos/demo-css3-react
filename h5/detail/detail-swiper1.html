@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title> json文件－图片轮播代码 </title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<script src="../data/detailList.json"></script>
+	<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<!-- 生产环境中不建议使用 -->
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+	<!--  引入swiper的CDN地址 -->
+	<link rel="stylesheet" href="https://www.9416.cn/demo/swiper/dist/css/swiper.min.css">
+
+	<!-- Demo styles -->
+	<style>
+		html, body {
+			position: relative;
+			height: 100%;
+		}
+		body {
+			background: #FFF;
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			color:#000;
+			margin: 0;
+			padding: 0;
+		}
+		.swiper-container {
+			width: 100%;
+			height: 300px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.swiper-slide {
+			background-size: cover;
+			background-position: center;
+			text-align: center;
+		}
+		.gallery-top {
+			height: 80%;
+			width: 100%;
+		}
+		.gallery-thumbs {
+			height: 20%;
+			box-sizing: border-box;
+			padding: 10px 0;
+		}
+		.gallery-thumbs .swiper-slide {
+			height: 100%;
+			opacity: 0.4;
+		}
+		.gallery-thumbs .swiper-slide-thumb-active {
+			opacity: 1;
+		}
+		.gallery-thumbs span{
+			position:relative;
+			bottom: 0;
+			float: none;
+		}
+		.gallery-imgTitle{
+			font-weight: 600;
+			font-size: 1.2em;
+			background-color: transparent;
+			width: 80%;
+			opacity: 0.3
+		}
+		.thumbs{
+			opacity: 1;
+			height: 20%;
+			padding-bottom: 5px;
+		}
+		.top{
+			opacity: 0.1;
+			font-size: 1.5rem;
+		}
+	</style>
+
+</head>
+<body>
+<div class="swiper-container gallery-top">
+	<div class="swiper-wrapper" id="galleryTop">
+	</div>
+	<!-- Add Arrows -->
+	<div class="swiper-button-next swiper-button-white"></div>
+	<div class="swiper-button-prev swiper-button-white"></div>
+</div>
+<div class="swiper-container gallery-thumbs">
+	<div class="swiper-wrapper" id="gallery-thumbs">
+
+	</div>
+</div>
+
+</body>
+
+<script type="text/babel">
+	const activeimgList = detailList['1'];
+	//	alert(activeimgList);
+	class SwiperGalleryDiv extends React.Component {
+		constructor(props) {
+			super(props);
+			this.state = {activeimgList:props.activeimgList,galleryLocation:props.galleryLocation}
+		};
+
+		componentDidMount(){
+			console.warn("this.state.galleryLocation======"+this.state.galleryLocation);
+			if(this.state.galleryLocation == "thumbs"){
+				var galleryThumbs = new Swiper('.gallery-thumbs', {
+					spaceBetween: 10,
+					slidesPerView: 3,
+					loop: true,
+					freeMode: true,
+					loopedSlides: 5, //looped slides should be the same
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true
+				});
+
+
+			}else if(this.state.galleryLocation == "top") {
+				var galleryThumbs = new Swiper('.gallery-thumbs', {
+					spaceBetween: 10,
+					slidesPerView: 3,
+					loop: true,
+					freeMode: true,
+					loopedSlides: 5, //looped slides should be the same
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true
+				});
+				var galleryTop = new Swiper('.gallery-top', {
+					spaceBetween: 10,
+					loop: true,
+					loopedSlides: 5, //looped slides should be the same
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+					thumbs: {
+						swiper: galleryThumbs
+					}
+				});
+			}
+		};
+
+		render() {
+			const content = this.state.activeimgList.map((activeimg) => {
+				let imgUrl =  activeimg.imgUrl;
+				let imgTitle =  activeimg.h3Text;
+				let titleClass = this.state.galleryLocation + " gallery-imgTitle";
+				if(this.state.galleryLocation == "thumbs"){
+					imgTitle =  activeimg.pText;
+				}
+//				console.warn(imgUrl);
+				let myStyle = {
+					backgroundImage:"url("+imgUrl+")"
+				}
+
+				let divStr = <div key={this.state.galleryLocation + activeimg.id} className="swiper-slide" style={myStyle} >
+						<span className={titleClass}>{imgTitle}</span>
+						</div>
+//				console.warn(divStr);
+				return divStr;
+			});
+//			console.warn(content);
+			return content;
+		}
+	}
+
+
+	ReactDOM.render(
+	<SwiperGalleryDiv activeimgList ={activeimgList} galleryLocation="thumbs"/>,
+			document.getElementById('gallery-thumbs')
+	);
+
+	ReactDOM.render(
+	<SwiperGalleryDiv activeimgList ={activeimgList} galleryLocation="top"/>,
+			document.getElementById('galleryTop')
+	);
+
+</script>
+
+<!-- Swiper JS -->
+<script src="https://www.9416.cn/demo/swiper/dist/js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+	//	var galleryThumbs = new Swiper('.gallery-thumbs', {
+	//		spaceBetween: 10,
+	//		slidesPerView: 4,
+	//		loop: true,
+	//		freeMode: true,
+	//		loopedSlides: 5, //looped slides should be the same
+	//		watchSlidesVisibility: true,
+	//		watchSlidesProgress: true,
+	//	});
+	//	var galleryTop = new Swiper('.gallery-top', {
+	//		spaceBetween: 10,
+	//		loop:true,
+	//		loopedSlides: 5, //looped slides should be the same
+	//		navigation: {
+	//			nextEl: '.swiper-button-next',
+	//			prevEl: '.swiper-button-prev',
+	//		},
+	//		thumbs: {
+	//			swiper: galleryThumbs,
+	//		},
+	//	});
+</script>
+</html>
