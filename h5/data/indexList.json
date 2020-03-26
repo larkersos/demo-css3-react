@@ -1,26 +1,59 @@
-var indexList  = [
-{id: 1
+﻿var indexList  = [
+{
+id: 6
 , imgUrl: '../images/index/1.jpg'
 , imgHref: 'detail/detail-swiper.html?id=1'
 , hitTitle: '2019'
-, h3Text: '你还记得今天吗'
-, pText: 'Hello pText'
-, h1Detail: 'Welcome h1Detail!'
-, pDetail: ' Welcome pDetail  Welcome to learning React!'}
-,        {id: 2
+, h3Text: '点点'
+, pText: '小小的人儿啊'
+, h1Detail: '你要健康的成长!'
+, pDetail: ' 剖腹产出生是一个紧急的事情！ <br> 听到哭声是一种激动！<br> 妈妈在你出生的第二天就为你哭了，期盼你健康 <br> 一个黄疸，让你住了8天医院，小小的儿受苦了<br> 有小毛病的屁屁，是一家人的担忧！'
+}
+,{
+id: 5
+, imgUrl: '../images/index/1.jpg'
+, imgHref: 'detail/detail-swiper.html?id=1'
+, hitTitle: '2018'
+, h3Text: '怀孕了'
+, pText: '两人人小的小家，要填新成员'
+, h1Detail: '孕育是个神奇的事件!'
+, pDetail: ' 小小的一个受精卵，一天天的将肚子顶起来！ <br> 每听到一声心跳，是一种惊喜！'
+}
+,{
+id: 4
+, imgUrl: '../images/index/1.jpg'
+, imgHref: 'detail/detail-swiper.html?id=1'
+, hitTitle: '2015.6.20'
+, h3Text: '搬家了'
+, pText: '住进了自己的家中'
+, h1Detail: '房子是一个居所，家是一个依靠!'
+, pDetail: ' 房子不大，可以遮风避雨！ <br> 装修简单，生活是平淡而充实的！'
+}
+,{id: 3
+, imgUrl: '../images/index/1.jpg'
+, imgHref: 'detail/detail-swiper.html?id=1'
+, hitTitle: '2015.5.23'
+, h3Text: '我们结婚了'
+, pText: '乡村婚礼氛围有些土气嘛'
+, h1Detail: '一场简单又特别的聚会!'
+, pDetail: ' 结婚，是两个人的结合！<br> 婚姻是两个家庭的相处 <br> 在乡村的小河边饭店，一场简单的婚礼在这里举行！'
+}
+,{id: 2
 , imgUrl: '../images/index/2.jpg'
   , imgHref: 'detail/detail-swiper.html?id=2'
-  , hitTitle: '2018'
-, h3Text: '你还记得昨天吗'
-, pText: '2Hello pText'
-, h1Detail: '2Welcome h1Detail!'
-, pDetail: ' 2Welcome pDetail  Welcome to learning React!'}
-,        {id: 3
-, imgUrl: '../images/index/3.jpg'
-  , imgHref: 'detail/detail-swiper.html?id=3'
-  , hitTitle: '2017'
-, h3Text: '你还记得明天吗'
-, pText: '3Hello pText'
-, h1Detail: '3Welcome h1Detail!'
-, pDetail: ' 3Welcome pDetail  Welcome to learning React!'}
+  , hitTitle: '2014.11.21'
+, h3Text: '领证了'
+, pText: '步入共同的生活'
+, h1Detail: '我们领证了，合法在一起了'
+, pDetail: ' 准备好了吗? <br>一个人活着，两个人搭伙过日子！ <br> 生活需要开始两个人经营！<br> '
+}
+,{id: 1
+, imgUrl: '../images/index/1.jpg'
+  , imgHref: 'detail/detail-swiper.html?id=1'
+  , hitTitle: '2013.11.23'
+, h3Text: '火车站的相遇'
+, pText: '两个人的一次相遇是上辈子千百次的缘分'
+, h1Detail: '那是一次晚点的缘分!'
+, pDetail: ' 谁也没有想到，两个人都晚点了! <br/>  谁也没有想到，两个人是一个大学的! <br/> 谁也没想到，两个人一起改签去'
+}
 ];

@@ -9,6 +9,23 @@ body {
     margin: 0
 }
 
+.header {
+
+? ? ? ? position: absolute;
+
+? ? ? ? top: 0;
+
+? ? ? ? left: 0;
+
+? ? ? ? right: 0;
+
+? ? ? ? z-index: 1000;
+
+? ? ? ? width: 100%;
+
+? ? }
+
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block
 }
@@ -435,11 +452,11 @@ p {
 }
 
 small, .small {
-    font-size: 85%
+    font-size: 85%fhea
 }
 
 cite {
-    font-style: normal
+    font-style: normalf
 }
 
 .text-left {

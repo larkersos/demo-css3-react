@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8" />
@@ -12,12 +12,14 @@
     <!--[if IE]>
     <![endif]-->
 </head>
+
+<div id="titleDiv" class="header ">
+    <h3 id="circle18" class="section-heading">时光轴相册 2019</h3>
+</div>
+
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
-<div id="titleDiv">
-    <h3 id="circle18" class="section-heading">时光轴相册 2019</h3>
 
-</div>
 <div class="bs-callout bs-callout-warning hidden">
     <p>Note: This will not work in IE9, since IE9 doesn't support 3d rotate.</p>
 </div>
@@ -95,7 +97,11 @@
                         <div className="details">
                             <div>
                                 <h1>{post.h1Detail}</h1>
-                                <p>{post.pDetail} </p>
+                                <p>
+<div dangerouslySetInnerHTML={{__html: post.pDetail}}>
+           
+        </div>
+ </p>
                             </div>
                         </div>
                     </div>
